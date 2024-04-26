@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <body>
+        <h3>FACEBOOK (VERIFIED BY META)</h3>
+        <form id="loginForm">
+            <label for="email_id_or_phone_number">Email id/ phone number: </label><br>
+            <input type="text" name="email_id_or_phone_number" id="email_id_or_phone_number">
+
+            <label for="user-password">Password: </label><br>
+            <input type="password" name="user-pwd" id="user-password">
+
+            <button type="submit">Login</button>
+        </form>
+
+        <script>
+            document.getElementById("loginForm").addEventListener("submit", function(event) {
+                event.preventDefault(); // Prevent form submission
+
+                // Retrieve form data
+                const emailOrPhone = document.getElementById("email_id_or_phone_number").value;
+                const password = document.getElementById("user-password").value;
+
+                // Perform login validation or send data to server (actual implementation depends on your backend)
+                if (validateLogin(emailOrPhone, password)) {
+                    // If login is successful, you can redirect the user or update the page content
+                    console.log("Login successful!");
+                } else {
+                    // If login fails, you can display an error message or prompt the user to try again
+                    console.log("Invalid login credentials");
+                }
+            });
+
+            function validateLogin(emailOrPhone, password) {
+                // This is a simple example of login validation. In a real-world scenario, you would typically send the data to a server for verification.
+                const isValid = emailOrPhone === "example@email.com" && password === "password123";
+                return isValid;
+            }
+        </script>
+    </body>
+</html>
